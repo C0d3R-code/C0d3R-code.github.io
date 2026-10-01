@@ -14,8 +14,8 @@ The `projects/` folder contains source copies featured on the site:
 
 The source files were selected from local coursework and coding folders. The C++ game uses Windows console headers. The Arduino sketch depends on SevSeg, which is not included here.
 
-## Contact widget
+## AI contact assistant
 
-The contact panel currently provides scripted answers about the projects, skills, email, and phone. It does not collect or send visitor messages. The direct email and phone links are available in the Contact section.
+The site embeds Xander Portfolio Assistant through Botpress Webchat. It answers questions about the published portfolio and points inquiries or feedback to Xander's email and phone. Chat messages are processed by Botpress; the assistant does not claim to forward messages to Xander. The direct email and phone links remain available in the Contact section.
 
-`chat.js` can use a same-origin `api/status` and `api/chat` service when a server-side AI integration is set up. GitHub Pages is static hosting, so those endpoints are not active on GitHub Pages. Never put an API key in this repository or browser code.
+The public Botpress embed script is in `index.html`. Bot instructions and knowledge are managed in Botpress, so edits to the assistant should be published there. Do not add private keys or credentials to this repository.
