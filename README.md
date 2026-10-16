@@ -1,21 +1,27 @@
-# Xander Kyle Solancho — Portfolio
+# Xander Solancho — portfolio
 
-A static portfolio for Xander Kyle Solancho, a software engineering student at FEU Tech. Open `index.html` locally or serve this repository with GitHub Pages. No build step is required.
+Live website: https://c0d3r-code.github.io/
 
-## Projects
+A responsive static portfolio for Xander Kyle Solancho, a web developer and software engineering student at FEU Tech. No build step or private credentials are required. Open index.html for a local preview, or serve this folder with a static web server.
 
-The `projects/` folder contains source copies featured on the site:
+## Pages
 
-- `snake-game.cpp` — C++ Windows console Snake game
-- `restaurant-ordering-system.py` — Python restaurant ordering system
-- `LibrarySystem.java` — Java library management system
-- `ConverterApp.java` — Java number conversion utility
-- `traffic-light.ino` — Arduino traffic light sketch; requires the SevSeg library
+- Home: index.html
+- Selected websites and programming projects: work.html
+- Kira’s Arts website case study: kirasarts.html
+- Website packages from US$499 and USD-to-PHP calculator: services.html
+- About: about.html
+- Contact and email draft form: contact.html
+- Chat and privacy information: privacy.html
 
-The source files were selected from local coursework and coding folders. The C++ game uses Windows console headers. The Arduino sketch depends on SevSeg, which is not included here.
+## Integrations
 
-## AI contact assistant
+Botpress Webchat is embedded on all pages. Its instructions and knowledge are managed and published in Botpress. Chat does not automatically send an email to Xander. The contact form prepares a draft in the visitor’s email application; it does not submit information to a server.
 
-The site embeds Xander Portfolio Assistant through Botpress Webchat. It answers questions about the published portfolio and points inquiries or feedback to Xander's email and phone. Chat messages are processed by Botpress; the assistant does not claim to forward messages to Xander. The direct email and phone links remain available in the Contact section.
+The calculator uses the public ExchangeRate-API daily USD endpoint and caches a reference in browser local storage until the next update. It falls back to a dated reference rate when offline or unavailable. Visitors can enter a custom rate. PHP values are estimates; published package totals are US$499 for one page, US$1,000 for two, US$1,499 for three, US$1,999 for four, and US$2,499 for five. Each additional page beyond three adds US$500. Internet access is required for updated rates, web fonts, and live AI chat.
 
-The public Botpress embed script is in `index.html`. Bot instructions and knowledge are managed in Botpress, so edits to the assistant should be published there. Do not add private keys or credentials to this repository.
+## Project credits
+
+Kira’s Arts screenshots are used to show Xander’s website design and implementation. Artwork and artist branding belong to Kira’s Arts. The case study is labeled as a prototype and does not claim live payment processing or automatic Telegram order delivery.
+
+The projects/ folder contains selected C++, Python, Java, and Arduino source files. The C++ game uses Windows console headers; the Arduino sketch requires the SevSeg library.
