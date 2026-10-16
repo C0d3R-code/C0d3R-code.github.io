@@ -100,4 +100,38 @@
       window.location.href=`mailto:xandersolancho21@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
+  const paymentForm = document.getElementById('paypal-link-form');
+  if (paymentForm) {
+    const packageSelect = document.getElementById('payment-package');
+    const amountInput = document.getElementById('payment-amount');
+    const paymentLink = document.getElementById('paypal-payment-link');
+    const paymentStatus = document.getElementById('payment-link-status');
+    const baseUrl = 'https://www.paypal.me/XSolancho';
+    function updatePaymentLink() {
+      const amount = Number(amountInput.value);
+      const valid = amountInput.value !== '' && amountInput.checkValidity() && Number.isFinite(amount);
+      paymentLink.href = valid ? `${baseUrl}/${amount.toFixed(2)}USD` : baseUrl;
+      paymentStatus.textContent = valid
+        ? `US$${amount.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})} will be requested on PayPal. Review the amount before paying.`
+        : amountInput.value === '' ? 'You can enter the amount here or on PayPal.' : 'Enter a valid USD amount between 0.01 and 1,000,000.';
+    }
+    packageSelect.addEventListener('change',()=>{
+      amountInput.value = packageSelect.value;
+      updatePaymentLink();
+    });
+    amountInput.addEventListener('input',()=>{
+      const match=Array.from(packageSelect.options).find(option=>option.value!=='' && Number(option.value)===Number(amountInput.value));
+      packageSelect.value=match?.value || '';
+      updatePaymentLink();
+    });
+    paymentLink.addEventListener('click',event=>{
+      if(!paymentForm.reportValidity()){event.preventDefault();return;}
+      updatePaymentLink();
+    });
+    paymentForm.addEventListener('submit',event=>{
+      event.preventDefault();
+      if(paymentForm.reportValidity()) paymentLink.click();
+    });
+    updatePaymentLink();
+  }
 })();

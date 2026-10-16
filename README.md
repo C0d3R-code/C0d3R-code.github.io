@@ -25,3 +25,14 @@ The calculator uses the public ExchangeRate-API daily USD endpoint and caches a 
 Kira’s Arts screenshots are used to show Xander’s website design and implementation. Artwork and artist branding belong to Kira’s Arts. The case study is labeled as a prototype and does not claim live payment processing or automatic Telegram order delivery.
 
 The projects/ folder contains selected C++, Python, Java, and Arduino source files. The C++ game uses Windows console headers; the Arduino sketch requires the SevSeg library.
+
+## Social discussions and payments
+
+- X for project discussions and progress updates: https://x.com/Xander202621
+- Payment methods: payments.html
+- PayPal destination: https://www.paypal.me/XSolancho
+- Original wallet images: assets/gcash-qr.png and assets/maya-qr.png
+
+The PayPal amount helper creates a hosted PayPal.Me link with an optional USD amount. It does not create an order, capture card details, or verify payment. Card funding and guest checkout depend on PayPal account and checkout eligibility. The supplied account is Personal; a dedicated Business card checkout is not configured. Wallet payments use the original supplied QR images and require receipt verification by the owner.
+
+Bank linking and automatic transfers are managed within PayPal, not this static website. Never put bank credentials, card data, API secrets, or a PayPal password in these files.
