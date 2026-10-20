@@ -24,7 +24,7 @@ The calculator uses the public ExchangeRate-API daily USD endpoint and caches a 
 
 Kira’s Arts screenshots are used to show Xander’s website design and implementation. Artwork and artist branding belong to Kira’s Arts. The case study is labeled as a prototype and does not claim live payment processing or automatic Telegram order delivery.
 
-The projects/ folder contains selected C++, Python, Java, and Arduino source files. The C++ game uses Windows console headers; the Arduino sketch requires the SevSeg library.
+The projects/ folder contains selected C++, Python, Java, and Arduino source files. The console Snake game uses Windows console headers. The separate OpenGL Snake game uses FreeGLUT, OpenGL, and GLU; build notes are in projects/opengl-snake-README.md. The Arduino sketch requires the SevSeg library.
 
 ## Social discussions and payments
 
