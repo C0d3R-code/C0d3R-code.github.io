@@ -9,7 +9,7 @@ A responsive static portfolio for Xander Kyle Solancho, a web developer and soft
 - Home: index.html
 - Selected websites and programming projects: work.html
 - Kira’s Arts website case study: kirasarts.html
-- Website packages from US$499 and USD-to-PHP calculator: services.html
+- Website packages from US$499, custom programs from US$50 (larger projects around US$200), and USD-to-PHP estimates: services.html
 - About: about.html
 - Contact and email draft form: contact.html
 - Chat and privacy information: privacy.html

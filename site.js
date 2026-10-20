@@ -38,6 +38,10 @@
       document.getElementById('pages-less').disabled = n <= 1;
       document.getElementById('pages-more').disabled = n >= 50;
       document.getElementById('estimate-inquiry').href = `contact.html?pages=${n}#inquiry`;
+      for (const [id, amount] of [['program-small-php',50],['program-large-php',200]]) {
+        const output = document.getElementById(id);
+        if (output) output.textContent = validRate(rate) ? `About ${php.format(amount * rate)} at the rate above. Final quote confirmed after discussion.` : 'Enter a valid exchange rate above for a PHP estimate.';
+      }
     }
     function useReference(data, prefix) {
       reference = data; manual = false; rateInput.value = data.rate;
@@ -84,6 +88,21 @@
   const form = document.getElementById('inquiry-form');
   if (form) {
     const pagesInput = document.getElementById('inquiry-pages');
+    const typeInput = document.getElementById('project-type');
+    const sizeInput = document.getElementById('program-size');
+    const params = new URLSearchParams(location.search);
+    if (params.get('service') === 'program') typeInput.value = 'Custom program';
+    if (['small','large','unsure'].includes(params.get('size'))) sizeInput.value = params.get('size');
+    function updateInquiryFields() {
+      const program = typeInput.value === 'Custom program';
+      const website = !program && typeInput.value !== 'General inquiry or feedback';
+      document.getElementById('website-pages-field').hidden = !website;
+      pagesInput.disabled = !website;
+      document.getElementById('program-size-field').hidden = !program;
+      sizeInput.disabled = !program;
+    }
+    typeInput.addEventListener('change', updateInquiryFields);
+    updateInquiryFields();
     const supplied = Number(new URLSearchParams(location.search).get('pages'));
     if (Number.isInteger(supplied) && supplied >= 1 && supplied <= 50) pagesInput.value=supplied;
     form.addEventListener('submit',event=>{
@@ -94,8 +113,11 @@
       const n=Number(pagesInput.value);
       const message=document.getElementById('project-message').value.trim();
       const feedback=type==='General inquiry or feedback';
-      const subject=feedback ? `Portfolio inquiry from ${name}` : `Website inquiry: ${type} (${n} ${n===1?'page':'pages'})`;
-      const body=`Hi Xander,\n\nMy name is ${name}.\n\n${feedback?'Inquiry or feedback':`Project type: ${type}\nEstimated pages: ${n}\nWebsite package price: US$${websitePrice(n).toLocaleString('en-US')}`}\n\n${message}\n\nThank you,\n${name}`;
+      const program=type==='Custom program';
+      const scope = sizeInput.options[sizeInput.selectedIndex].text;
+      const subject=feedback ? `Portfolio inquiry from ${name}` : program ? `Custom program inquiry from ${name}` : `Website inquiry: ${type} (${n} ${n===1?'page':'pages'})`;
+      const details = feedback ? 'Inquiry or feedback' : program ? `Project type: Custom program\nScope: ${scope}\nFinal price to be agreed after reviewing requirements.` : `Project type: ${type}\nEstimated pages: ${n}\nWebsite package price: US$${websitePrice(n).toLocaleString('en-US')}`;
+      const body=`Hi Xander,\n\nMy name is ${name}.\n\n${details}\n\n${message}\n\nThank you,\n${name}`;
       document.getElementById('form-status').textContent='Your email draft is ready. Review it in your email app and press Send. If it does not open, email xandersolancho21@gmail.com directly.';
       window.location.href=`mailto:xandersolancho21@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
