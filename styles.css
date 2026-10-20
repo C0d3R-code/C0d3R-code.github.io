@@ -23,3 +23,89 @@
 #program-size-field { margin: 16px 0; }
 @media(max-width: 580px) { .program-price-grid { grid-template-columns: 1fr; } .program-price-grid .service-card { padding: 24px; } }
 
+:root { color-scheme: light; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #101720;
+  --ink: #edf1f5;
+  --muted: #adb8c6;
+  --blue: #9bb4ff;
+  --line: #344252;
+  --soft: #19232f;
+  --surface: #1c2835;
+}
+.header-actions { display: flex; align-items: center; gap: 12px; flex: none; }
+.theme-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 1px solid var(--line); border-radius: 30px; background: transparent; color: var(--ink); padding: 9px 12px; font-size: 11px; white-space: nowrap; min-height: 40px; }
+.theme-toggle:hover { border-color: var(--blue); color: var(--blue); }
+.theme-icon { font-size: 17px; line-height: 1; }
+.site-header nav { margin-left: auto; }
+html[data-theme="dark"] .button { background: #d7e2ff; color: #15223a; border-color: #d7e2ff; }
+html[data-theme="dark"] .button:hover { background: #b6caff; border-color: #b6caff; }
+html[data-theme="dark"] .button-secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] .button-secondary:hover { background: #2c3b50; }
+html[data-theme="dark"] .skip-link { background: #d7e2ff; color: #15223a; }
+html[data-theme="dark"] .hero-showcase,
+html[data-theme="dark"] .project-caption,
+html[data-theme="dark"] .work-image,
+html[data-theme="dark"] .case-visual,
+html[data-theme="dark"] .mobile-stage { background: #292733; }
+html[data-theme="dark"] .showcase-note .eyebrow,
+html[data-theme="dark"] .showcase-note p,
+html[data-theme="dark"] .mobile-stage>.mono { color: #c4bacd; }
+html[data-theme="dark"] .project-caption { border-color: #4b4457; }
+html[data-theme="dark"] .code-project,
+html[data-theme="dark"] .calculator,
+html[data-theme="dark"] .paypal-card,
+html[data-theme="dark"] .wallet-card,
+html[data-theme="dark"] .program-price-grid .service-card { background: var(--surface); }
+html[data-theme="dark"] .program-services,
+html[data-theme="dark"] .inquiry-card { background: var(--soft); }
+html[data-theme="dark"] .price-card,
+html[data-theme="dark"] .social-discussion { background: #1c2a3d; border: 1px solid var(--line); }
+html[data-theme="dark"] .price-card .button,
+html[data-theme="dark"] .social-discussion .button { background: var(--lime); color: #23342e; border-color: var(--lime); }
+html[data-theme="dark"] .cta { background: #284798; }
+html[data-theme="dark"] .site-footer { background: #0c121b; }
+html[data-theme="dark"] .portfolio-art { background: #25372f; color: #d2e6d3; }
+html[data-theme="dark"] .identity-art strong>span { color: #3158cf; }
+html[data-theme="dark"] .stepper button,
+html[data-theme="dark"] .rate-field button { background: #283747; }
+html[data-theme="dark"] .stepper input { color: var(--ink); }
+html[data-theme="dark"] .menu-toggle { color: var(--ink); }
+html[data-theme="dark"] .site-header nav .nav-cta,
+html[data-theme="dark"] .button-secondary,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .tag,
+html[data-theme="dark"] .price-pill,
+html[data-theme="dark"] .stepper,
+html[data-theme="dark"] .inquiry-card input,
+html[data-theme="dark"] .inquiry-card select,
+html[data-theme="dark"] .inquiry-card textarea,
+html[data-theme="dark"] .paypal-card select,
+html[data-theme="dark"] .payment-amount-wrap,
+html[data-theme="dark"] .payment-method-tags>a { border-color: var(--line); }
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder { color: #9ba9b8; opacity: 1; }
+html[data-theme="dark"] .paypal-wordmark { color: #b7ceff; }
+html[data-theme="dark"] .paypal-wordmark>span { color: #72c5ff; }
+html[data-theme="dark"] .paypal-button { background: #2854b0; color: white; border-color: #2854b0; }
+html[data-theme="dark"] .gcash-card h3 { color: #80b4ff; }
+html[data-theme="dark"] .maya-card h3 { color: #62db9a; }
+html[data-theme="dark"] ::selection { background: #536d37; color: white; }
+/* Keep original project screenshots and payment QRs in their original colors. */
+@media(min-width:901px) and (max-width:1200px) {
+  .header-inner { gap: 16px; }
+  .site-header nav { gap: 16px; }
+  .site-header nav .nav-cta { margin-left: 0; padding: 10px 13px; }
+}
+@media(max-width:1100px) and (min-width:901px) {
+  .site-header .brand>span:last-child { display: none; }
+}
+@media(max-width:580px) {
+  .header-inner { gap: 10px; }
+  .header-actions { gap: 7px; }
+  .theme-toggle { padding: 9px 10px; }
+  .theme-toggle .theme-label { display: none; }
+  .menu-toggle { padding: 9px 12px; gap: 10px; }
+}
+

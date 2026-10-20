@@ -1,6 +1,36 @@
 (() => {
   'use strict';
-  const websitePrice = pages => pages === 1 ? 499 : pages === 2 ? 1000 : pages * 500 - 1;
+  const websitePrice = pages => pages * 500 - 1;
+  const themeToggle = document.getElementById('theme-toggle');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  let savedTheme;
+  try { savedTheme = localStorage.getItem('xander-theme'); } catch (_) {}
+  function applyTheme(theme) {
+    const dark = theme === 'dark';
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    themeToggle?.setAttribute('aria-pressed', String(dark));
+    themeToggle?.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    if (themeToggle) {
+      themeToggle.querySelector('.theme-icon').textContent = dark ? '☀' : '☾';
+      themeToggle.querySelector('.theme-label').textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark ? '#101720' : '#f8f8f3');
+  }
+  applyTheme(['light','dark'].includes(savedTheme) ? savedTheme : systemTheme.matches ? 'dark' : 'light');
+  themeToggle?.addEventListener('click', () => {
+    savedTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('xander-theme',savedTheme); } catch (_) {}
+    applyTheme(savedTheme);
+  });
+  systemTheme.addEventListener('change', event => {
+    if (!['light','dark'].includes(savedTheme)) applyTheme(event.matches ? 'dark' : 'light');
+  });
+  window.addEventListener('storage', event => {
+    if (event.key === 'xander-theme') {
+      savedTheme = event.newValue;
+      applyTheme(['light','dark'].includes(savedTheme) ? savedTheme : systemTheme.matches ? 'dark' : 'light');
+    }
+  });
   const menu = document.querySelector('.menu-toggle');
   const nav = document.getElementById('navigation');
   menu?.addEventListener('click', () => {

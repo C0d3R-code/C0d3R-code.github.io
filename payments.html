@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8f8f3">
+<script>try{var theme=localStorage.getItem("xander-theme");document.documentElement.dataset.theme=theme==="dark"||theme==="light"?theme:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}catch(e){document.documentElement.dataset.theme=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}</script>
 <meta name="description" content="Pay Xander Kyle Solancho for an agreed website or custom programming project using PayPal, GCash, or Maya. View the official payment link and original wallet QR codes.">
 <meta property="og:title" content="Payment methods — Xander Solancho">
 <meta property="og:description" content="Pay Xander Kyle Solancho for an agreed website or custom programming project using PayPal, GCash, or Maya. View the official payment link and original wallet QR codes.">
@@ -12,8 +13,8 @@
 <link rel="canonical" href="https://c0d3r-code.github.io/payments.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <title>Payment methods — Xander Solancho</title>
-<link rel="stylesheet" href="styles.css?v=20261020-programs">
-<script src="site.js?v=20261020-programs" defer>
+<link rel="stylesheet" href="styles.css?v=20261020-theme">
+<script src="site.js?v=20261020-theme" defer>
 </script>
 </head>
 <body>
@@ -26,8 +27,6 @@
 <span>Xander Solancho<small>WEB DEVELOPER & STUDENT</small>
 </span>
 </a>
-<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
-</button>
 <nav id="navigation" aria-label="Main navigation">
 <a href="work.html" >Work</a>
 <a href="services.html" >Services & pricing</a>
@@ -37,6 +36,14 @@
 <a class="nav-cta" href="contact.html#inquiry">Start a project <span aria-hidden="true">↗</span>
 </a>
 </nav>
+<div class="header-actions">
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+<span class="theme-icon" aria-hidden="true">☾</span>
+<span class="theme-label">Dark mode</span>
+</button>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
+</button>
+</div>
 </div>
 </header>
 <main id="main">
@@ -83,7 +90,7 @@
 <select id="payment-package">
 <option value="">Custom or agreed partial amount</option>
 <option value="499">1-page website — US$499</option>
-<option value="1000">2-page website — US$1,000</option>
+<option value="999">2-page website — US$999</option>
 <option value="1499">3-page website — US$1,499</option>
 <option value="1999">4-page website — US$1,999</option>
 <option value="2499">5-page website — US$2,499</option>

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8f8f3">
+<script>try{var theme=localStorage.getItem("xander-theme");document.documentElement.dataset.theme=theme==="dark"||theme==="light"?theme:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}catch(e){document.documentElement.dataset.theme=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}</script>
 <meta name="description" content="Website design from US$499 per one-page website. Separate custom programming services start at US$50 for small projects, with larger projects around US$200.">
 <meta property="og:title" content="Services & pricing — Xander Solancho">
 <meta property="og:description" content="Website design from US$499 per one-page website. Separate custom programming services start at US$50 for small projects, with larger projects around US$200.">
@@ -12,8 +13,8 @@
 <link rel="canonical" href="https://c0d3r-code.github.io/services.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <title>Services & pricing — Xander Solancho</title>
-<link rel="stylesheet" href="styles.css?v=20261020-programs">
-<script src="site.js?v=20261020-programs" defer>
+<link rel="stylesheet" href="styles.css?v=20261020-theme">
+<script src="site.js?v=20261020-theme" defer>
 </script>
 </head>
 <body>
@@ -26,8 +27,6 @@
 <span>Xander Solancho<small>WEB DEVELOPER & STUDENT</small>
 </span>
 </a>
-<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
-</button>
 <nav id="navigation" aria-label="Main navigation">
 <a href="work.html" >Work</a>
 <a href="services.html" aria-current="page">Services & pricing</a>
@@ -37,6 +36,14 @@
 <a class="nav-cta" href="contact.html#inquiry">Start a project <span aria-hidden="true">↗</span>
 </a>
 </nav>
+<div class="header-actions">
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+<span class="theme-icon" aria-hidden="true">☾</span>
+<span class="theme-label">Dark mode</span>
+</button>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
+</button>
+</div>
 </div>
 </header>
 <main id="main">
@@ -80,10 +87,10 @@
 <p class="eyebrow">PLAN YOUR WEBSITE / USD → PHP</p>
 <h2>A clear starting point<br>for <em>your budget.</em>
 </h2>
-<p>A one-page website is <strong>US$499</strong>. Multi-page packages use rounded totals: two pages are US$1,000, three are US$1,499, and each page after that adds US$500. Choose your page count to see your package price and PHP estimate.</p>
+<p>A one-page website is <strong>US$499</strong>. Multi-page packages use rounded totals: two pages are US$999, three are US$1,499, and each page after that adds US$500. Choose your page count to see your package price and PHP estimate.</p>
 <ul class="clean-list">
 <li>One page: US$499</li>
-<li>Two pages: US$1,000</li>
+<li>Two pages: US$999</li>
 <li>Three pages: US$1,499</li>
 <li>Five pages: US$2,499</li>
 </ul>
@@ -122,7 +129,7 @@
 <a class="button" id="estimate-inquiry" href="contact.html?pages=1#inquiry">Discuss this website <span aria-hidden="true">↗</span>
 </a>
 <noscript>
-<p>JavaScript is required for automatic calculations. Packages start at US$499 for one page, US$1,000 for two, and US$1,499 for three. Email Xander for a PHP estimate.</p>
+<p>JavaScript is required for automatic calculations. Packages start at US$499 for one page, US$999 for two, and US$1,499 for three. Email Xander for a PHP estimate.</p>
 </noscript>
 </div>
 </section>
@@ -216,7 +223,7 @@
 <div class="faq-list">
 <details>
 <summary>How are website packages priced?</summary>
-<p>The total depends on your page count: one page is US$499, two pages are US$1,000, three pages are US$1,499, four pages are US$1,999, and five pages are US$2,499. Each page after three adds US$500. We’ll agree on the page count and project scope together.</p>
+<p>The total depends on your page count: one page is US$499, two pages are US$999, three pages are US$1,499, four pages are US$1,999, and five pages are US$2,499. Each page after three adds US$500. We’ll agree on the page count and project scope together.</p>
 </details>
 <details>
 <summary>Can I see the price in Philippine pesos?</summary>

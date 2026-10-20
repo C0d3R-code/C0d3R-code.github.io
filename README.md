@@ -18,7 +18,7 @@ A responsive static portfolio for Xander Kyle Solancho, a web developer and soft
 
 Botpress Webchat is embedded on all pages. Its instructions and knowledge are managed and published in Botpress. Chat does not automatically send an email to Xander. The contact form prepares a draft in the visitor’s email application; it does not submit information to a server.
 
-The calculator uses the public ExchangeRate-API daily USD endpoint and caches a reference in browser local storage until the next update. It falls back to a dated reference rate when offline or unavailable. Visitors can enter a custom rate. PHP values are estimates; published package totals are US$499 for one page, US$1,000 for two, US$1,499 for three, US$1,999 for four, and US$2,499 for five. Each additional page beyond three adds US$500. Internet access is required for updated rates, web fonts, and live AI chat.
+The calculator uses the public ExchangeRate-API daily USD endpoint and caches a reference in browser local storage until the next update. It falls back to a dated reference rate when offline or unavailable. Visitors can enter a custom rate. PHP values are estimates; published package totals are US$499 for one page, US$999 for two, US$1,499 for three, US$1,999 for four, and US$2,499 for five. Each additional page beyond three adds US$500. Internet access is required for updated rates, web fonts, and live AI chat.
 
 ## Project credits
 

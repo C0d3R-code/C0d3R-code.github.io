@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8f8f3">
+<script>try{var theme=localStorage.getItem("xander-theme");document.documentElement.dataset.theme=theme==="dark"||theme==="light"?theme:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}catch(e){document.documentElement.dataset.theme=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}</script>
 <meta name="description" content="How the portfolio’s Botpress AI assistant, currency calculator, and email inquiry form handle visitor information.">
 <meta property="og:title" content="Chat & privacy — Xander Solancho">
 <meta property="og:description" content="How the portfolio’s Botpress AI assistant, currency calculator, and email inquiry form handle visitor information.">
@@ -12,8 +13,8 @@
 <link rel="canonical" href="https://c0d3r-code.github.io/privacy.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <title>Chat & privacy — Xander Solancho</title>
-<link rel="stylesheet" href="styles.css?v=20261020-programs">
-<script src="site.js?v=20261020-programs" defer>
+<link rel="stylesheet" href="styles.css?v=20261020-theme">
+<script src="site.js?v=20261020-theme" defer>
 </script>
 </head>
 <body>
@@ -26,8 +27,6 @@
 <span>Xander Solancho<small>WEB DEVELOPER & STUDENT</small>
 </span>
 </a>
-<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
-</button>
 <nav id="navigation" aria-label="Main navigation">
 <a href="work.html" >Work</a>
 <a href="services.html" >Services & pricing</a>
@@ -37,6 +36,14 @@
 <a class="nav-cta" href="contact.html#inquiry">Start a project <span aria-hidden="true">↗</span>
 </a>
 </nav>
+<div class="header-actions">
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+<span class="theme-icon" aria-hidden="true">☾</span>
+<span class="theme-label">Dark mode</span>
+</button>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
+</button>
+</div>
 </div>
 </header>
 <main id="main">
@@ -54,6 +61,7 @@
 <a href="https://botpress.com/legal/privacy" target="_blank" rel="noopener noreferrer">Read the Botpress privacy policy ↗</a>
 </p>
 <h2>The website estimate calculator</h2>
+<p>Your light or dark appearance preference is saved in your browser’s local storage when you use the theme toggle. Before you choose, the website follows your device’s color preference.</p>
 <p>The calculator may request the latest daily USD exchange rate from ExchangeRate-API. A reference rate may be cached in your browser’s local storage. Calculations take place in your browser, and the PHP value is an estimate rather than a payment quote.</p>
 <h2>The inquiry form</h2>
 <p>The inquiry form prepares an email draft in your own email application. The form does not submit your brief to a server. Your email is sent only when you choose to send it in your email app.</p>

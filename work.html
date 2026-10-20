@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8f8f3">
+<script>try{var theme=localStorage.getItem("xander-theme");document.documentElement.dataset.theme=theme==="dark"||theme==="light"?theme:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}catch(e){document.documentElement.dataset.theme=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}</script>
 <meta name="description" content="Website design and programming projects by Xander Kyle Solancho, including the Kira’s Arts digital art commission website.">
 <meta property="og:title" content="Selected work — Xander Solancho">
 <meta property="og:description" content="Website design and programming projects by Xander Kyle Solancho, including the Kira’s Arts digital art commission website.">
@@ -12,8 +13,8 @@
 <link rel="canonical" href="https://c0d3r-code.github.io/work.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <title>Selected work — Xander Solancho</title>
-<link rel="stylesheet" href="styles.css?v=20261020-programs">
-<script src="site.js?v=20261020-programs" defer>
+<link rel="stylesheet" href="styles.css?v=20261020-theme">
+<script src="site.js?v=20261020-theme" defer>
 </script>
 </head>
 <body>
@@ -26,8 +27,6 @@
 <span>Xander Solancho<small>WEB DEVELOPER & STUDENT</small>
 </span>
 </a>
-<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
-</button>
 <nav id="navigation" aria-label="Main navigation">
 <a href="work.html" aria-current="page">Work</a>
 <a href="services.html" >Services & pricing</a>
@@ -37,6 +36,14 @@
 <a class="nav-cta" href="contact.html#inquiry">Start a project <span aria-hidden="true">↗</span>
 </a>
 </nav>
+<div class="header-actions">
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+<span class="theme-icon" aria-hidden="true">☾</span>
+<span class="theme-label">Dark mode</span>
+</button>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu <span aria-hidden="true">+</span>
+</button>
+</div>
 </div>
 </header>
 <main id="main">
